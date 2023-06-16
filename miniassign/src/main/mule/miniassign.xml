@@ -34,14 +34,6 @@ payload]]></ee:set-payload>
 		<azure-storage:download-blob doc:name="Download blob" doc:id="a758ae8b-10f2-4081-8ade-f2851375e83a" config-ref="Azure_Storage_Config">
 			<azure-storage:blob container='#["crud"]' fileName='#["upload.json"]' />
 		</azure-storage:download-blob>
-		<ee:transform doc:name="Transform Message" doc:id="e5526c75-c8bf-4869-8e94-b07273ffa5d1" >
-			<ee:message >
-				<ee:set-payload ><![CDATA[%dw 2.0
-output application/json
----
-payload]]></ee:set-payload>
-			</ee:message>
-		</ee:transform>
 		<logger level="INFO" doc:name="Download ends" doc:id="c7841753-8df3-4052-8bb2-4d773ec6eb6b" message="Download ends"/>
 	</flow>
 	<flow name="UpdateFileFlow" doc:id="85caab7f-d147-4b78-96e7-5e38127f965e" >
